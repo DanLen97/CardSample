@@ -1,0 +1,15 @@
+.example-card {
+  max-width: 400px;
+  border-width: 1px;
+  border-color: black;
+  margin: 10px 0 10px 0;
+}
+
+.card-image {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.front {
+  z-index: 1;
+}

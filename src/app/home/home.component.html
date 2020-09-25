@@ -1,17 +1,5 @@
-<div class="container">
-  <mat-card class="example-card" [@flip]="flipState" cdkDragBoundary=".container" cdkDrag>
-    <mat-card-header>
-      <mat-card-title>#001</mat-card-title>
-      <mat-card-subtitle>Grundstück = Unikat</mat-card-subtitle>
-    </mat-card-header>
-    <img class="card-image" mat-card-image src="assets/sample-pic.png" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        Jedes Grundstück hat eine andere Geometrie, ist nie gleich und immer ein Unikat, daher ist ein Denken in gleichartigen modularen Holzbausystemen zu starr und unwirtschaftlich.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="onFlipToggle()">Flip</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="container" fxLayout="row wrap" fxLayoutAlign="space-around start">
+  <ng-container *ngFor="let x of [].constructor(10)">
+    <app-card fxFlex="22" [card]="data[0]"></app-card>
+  </ng-container>
 </div>

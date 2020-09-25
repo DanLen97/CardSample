@@ -1,0 +1,11 @@
+<mat-card class="example-card" [@flip]="{ value: flipState, params: {x: position.x, y: position.y}}"
+  (mouseover)="onCardEnter()" (mouseleave)="onCardLeave()" [ngClass]="{ 'front': isFront }">
+  <mat-card-header>
+    <mat-card-title>{{ card.title }}</mat-card-title>
+    <mat-card-subtitle>{{ card.subTitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="card-image" mat-card-image [src]="card.imgSrc" alt="Photo">
+  <mat-card-content>
+    <p>{{ card.text }}</p>
+  </mat-card-content>
+</mat-card>

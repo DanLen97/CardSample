@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+
+<mat-toolbar fxLayout="row" color="accent">
+  <span>Card sample</span>
+  <span fxFlex></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<div>
+  <router-outlet></router-outlet>
+</div>

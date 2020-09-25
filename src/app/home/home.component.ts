@@ -1,40 +1,28 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Card } from '../shared/models/card.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  animations: [
-    trigger('flip', [
-      state('front', style({
-        transform: 'rotateY(0deg)'
-      })),
-      state('back', style({
-        transform: 'rotateY(180deg)'
-      })),
-      transition('front => back', [
-        animate('1s 0s ease-out')
-      ]),
-      transition('back => front', [
-        animate('1s 0s ease-out')
-      ])
-    ])
-  ]
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  public flipState: 'front' | 'back' = 'front';
+  public readonly data: Card[] = [
+    {
+      title: '#001',
+      subTitle: 'Grundstück = Unikat',
+      text: 'Jedes Grundstück hat eine andere Geometrie, ist nie gleich und immer ein Unikat, daher ist ein Denken in gleichartigen modularen Holzbausystemen zu starr und unwirtschaftlich.',
+      imgSrc: 'assets/sample-pic.png'
+    }
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public onFlipToggle() {
-    this.flipState === 'front'
-      ? this.flipState = 'back'
-      : this.flipState = 'front';
-  }
+
 
 }
