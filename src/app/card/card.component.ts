@@ -10,10 +10,10 @@ import { Card } from '../shared/models/card.model';
   animations: [
     trigger('flip', [
       state('on', style({
-        transform: 'translate(calc(50% - {{x}}px), calc(50% - {{y}}px)) scale(1.5)'
-      }), { params: {x: 0, y: 0}}),
+        height: '100px'
+      })),
       state('off', style({
-        transform: 'translate(0, 0) scale(1)'
+        height: 0
       })),
       transition('off => on', [
         animate('1s ease-out')

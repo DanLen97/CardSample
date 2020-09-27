@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 
 import { SharedModule } from './shared/shared.module';
 import { CardComponent } from './card/card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './card/card.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

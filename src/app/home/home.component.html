@@ -1,5 +1,5 @@
-<div class="container" fxLayout="row wrap" fxLayoutAlign="space-around start">
+<div class="card-columns">
   <ng-container *ngFor="let x of [].constructor(10)">
-    <app-card fxFlex="22" [card]="data[0]"></app-card>
+    <app-card [card]="data[0]"></app-card>
   </ng-container>
 </div>
