@@ -7,6 +7,15 @@ body {
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIElEQVQoU2NcWuD6v2nfFwZcgFFdz/I/TlkGBobhoQAAGHYPccmxFlIAAAAASUVORK5CYII=) repeat;
 }
 
+.modal-content{
+  animation-name: fade-in;
+  animation-duration: 0.4s;
+}
+
+@keyframes fade-in {
+  0%   {transform: scale(0.5)}
+  75%  {transform: scale(1)}
+}
 
 
 /* Importing Bootstrap SCSS file. */

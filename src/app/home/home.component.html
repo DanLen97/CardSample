@@ -1,11 +1,5 @@
-<!-- <div class="card-columns">
-  <ng-container *ngFor="let x of [].constructor(10)">
-    <app-card [card]="data[0]"></app-card>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
+  <ng-container *ngFor="let x of [].constructor(33)" >
+    <app-card [card]="data[0]" class="col my-3" (click)="onCardClick(data[0])"></app-card>
   </ng-container>
-</div> -->
-
-<ngb-carousel *ngIf="[].constructor(10)">
-  <ng-template ngbSlide *ngFor="let x of [].constructor(10)">
-    <app-card [card]="data[0]"></app-card>
-  </ng-template>
-</ngb-carousel>
+</div>

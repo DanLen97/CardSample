@@ -10,12 +10,14 @@ import { SharedModule } from './shared/shared.module';
 import { CardComponent } from './card/card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,

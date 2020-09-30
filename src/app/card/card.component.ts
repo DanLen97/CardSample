@@ -8,12 +8,12 @@ import { Card } from '../shared/models/card.model';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   animations: [
-    trigger('flip', [
+    trigger('zoom', [
       state('on', style({
-        height: '100px'
+        transform: 'scale(2)'
       })),
       state('off', style({
-        height: 0
+        transform: 'scale(1)'
       })),
       transition('off => on', [
         animate('1s ease-out')
@@ -26,19 +26,23 @@ import { Card } from '../shared/models/card.model';
 })
 export class CardComponent implements OnInit {
 
-  public flipState: 'on' | 'off' = 'off';
+  public zoomState: 'on' | 'off' = 'off';
 
   @Input()
   public card: Card;
 
-  public get isFront(): boolean {
-    return this.flipState === 'on';
+  public get isZoomed(): boolean {
+    return this.zoomState === 'on';
+  }
+  public set isZoomed(prop: boolean) {
+    prop
+      ? this.zoomState = 'on'
+      : this.zoomState = 'off';
   }
 
   constructor(private elemRef: ElementRef) { }
 
   ngOnInit(): void {
-    console.log(this.position);
   }
 
   public get position(): {x: number, y: number} {
@@ -46,13 +50,8 @@ export class CardComponent implements OnInit {
   }
 
 
-  public onCardEnter() {
-    if (this.flipState !== 'on') {
-      this.flipState = 'on';
-    }
-  }
-
-  public onCardLeave() {
-    this.flipState = 'off';
+  public toggleZoom() {
+    this.isZoomed = !this.isZoomed;
+    console.log(this.zoomState);
   }
 }

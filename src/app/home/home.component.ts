@@ -1,11 +1,14 @@
+import { CardDetailComponent } from './../card-detail/card-detail.component';
+import { Card } from './../shared/models/card.model';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { Card } from '../shared/models/card.model';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
 
@@ -18,11 +21,17 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public onCardClick(card: Card) {
+    const ref = this.modalService.open(CardDetailComponent, { centered: true, backdropClass: 'blur' });
+    ref.componentInstance.card = card;
+  }
 
 
 }
