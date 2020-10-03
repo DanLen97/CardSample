@@ -1,4 +1,4 @@
-<div class="modal-header" fxLayout="row">
+<!-- <div class="modal-header" fxLayout="row">
   <h4 class="modal-title" >
     {{ card.title }}
   </h4>
@@ -12,4 +12,10 @@
 <div class="modal-footer">
   <p style="white-space: pre-line;">{{ card.text }}</p>
 </div>
+ -->
 
+<img style="border-radius: 1rem;" [src]="card.imgSrc" class="card-img-top" alt="Picture">
+
+<div class="mt-4 p-4" style="background-color: white; border-radius: 1rem;">
+  <span style="white-space: pre-line;">{{ card.text }}</span>
+</div>

@@ -10,6 +10,8 @@ body {
 .modal-content{
   animation-name: fade-in;
   animation-duration: 0.4s;
+  background-color: transparent !important;
+  border: none !important;
 }
 
 @keyframes fade-in {
