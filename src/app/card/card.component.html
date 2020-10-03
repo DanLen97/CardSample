@@ -1,3 +1,6 @@
-<div class="card">
-  <img [src]="card.imgSrc" class="card-img-top" alt="Picture">
+<div class="card" style="cursor: pointer;" (click)="cardClicked.emit(card)">
+  <!-- <div class="card-body">
+    <h5 class="card-title">{{ card.title }}</h5>
+  </div> -->
+  <img [src]="card.imgSrc" class="card-img-bottom" alt="Picture">
 </div>

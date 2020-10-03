@@ -1,5 +1,5 @@
 import { animate, state, transition, trigger, style } from '@angular/animations';
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../shared/models/card.model';
 
 
@@ -30,6 +30,9 @@ export class CardComponent implements OnInit {
 
   @Input()
   public card: Card;
+
+  @Output()
+  public cardClicked = new EventEmitter<any>();
 
   public get isZoomed(): boolean {
     return this.zoomState === 'on';

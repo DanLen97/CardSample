@@ -1,5 +1,6 @@
 import { Card } from './../shared/models/card.model';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card-detail',
@@ -11,7 +12,9 @@ export class CardDetailComponent implements OnInit {
   @Input()
   public card: Card;
 
-  constructor() { }
+  constructor(
+    public activeModal: NgbActiveModal
+  ) { }
 
   ngOnInit(): void {
   }
